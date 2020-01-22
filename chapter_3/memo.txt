@@ -1,0 +1,86 @@
+int *f();                // intへのポインタを返す関数
+
+int (*pf)();             // 関数へのポインタ(その関数はintを返す)
+
+pf is pointer to function returning int.
+
+Cの宣言解読
+
+int hoge;  hoge is int
+            hogeはintだ
+
+int hoge[10]; hoge is array(要素数10) of int
+                 hogeはintの配列(要素数10)だ
+
+int hoge[10][3]; hoge is array(要素数10) of array(要素数3) of int
+                    hogeは、intの配列(要素数3)の配列(要素数10)だ
+
+int *hoge[10]; hoge is array(要素数10) of pointer to int
+                   hogeはintへのポインタの配列(要素数10)だ
+
+double (*hoge)[3]; hoge is pointer to array(要素数3) of double
+                       hogeはdoubleの配列(要素数3)へのポインタだ
+
+int func(int a); func is function(引数はint a)returning int
+                    funcはintを返す関数(引数はint)だ
+
+int (*func_p)(int a); func is pointer to function(引数はint a)returning int
+                          func_pは、intを返す関数(引数はint a)へのポインタだ
+
+型名の解読
+int : int型
+    
+int* : intへのポインタ型
+
+double (*)[3] : doubleの配列へのポインタ型
+
+void (*)() : voidを返す関数へのポインタ型
+
+
+配列へのポインタ
+
+  int (*array_p)[3]; : intの配列(要素数3)へのポインタ
+
+配列に&をつけると、「配列へのポインタ」が取得できる。
+  array_p = &array;
+
+ただし、
+array_p = array
+とすると、警告が出る。arrayは配列の先頭要素へのポインタだから
+int array[10]のarrayの型は
+int *int_p と同じ
+
+array_p = &array
+と
+int_p = array
+は同じアドレスを指すが、ポインタ演算時の挙動が異なる
+
+array_p : 4バイト×3(要素数)進む
+int_p   : 4バイト進む
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
