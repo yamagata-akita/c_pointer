@@ -15,6 +15,6 @@ int main(void)
 
     cout << "array_p : "  << array_p << endl;
     cout << "int_p : "  << int_p << endl;
-    cout << "array_p++ : "  << array_p++ << endl;
-    cout << "int_p++ : "  << int_p++ << endl;
+    cout << "array_p + 1 : "  << array_p + 1 << endl;
+    cout << "int_p + 1 : "  << int_p + 1 << endl;
 }
